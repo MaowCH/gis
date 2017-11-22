@@ -1,4 +1,4 @@
-<?
+<?php
 
 DEFINE("_host",  "localhost" );
 DEFINE("_db_user",  "root" );
