@@ -6,6 +6,7 @@ $mysql->J_Connect();
 $mysql->set_char_utf8();
 
 $sql = "select l.*,lt.location_type_th from tbl_location l left join tbl_location_type lt on l.location_type = lt.id ";
+$sql .= "where l.location_name like '%".$_POST["keyword"]."%'";
 $rs = $mysql->J_Execute($sql);
 $arr = array();
 
