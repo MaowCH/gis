@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 23, 2017 at 03:13 PM
+-- Generation Time: Dec 01, 2017 at 08:26 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_gis`
 --
-CREATE DATABASE IF NOT EXISTS `db_gis` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `db_gis`;
 
 -- --------------------------------------------------------
 
@@ -37,18 +35,22 @@ CREATE TABLE IF NOT EXISTS `tbl_location` (
   `lat` varchar(100) DEFAULT NULL,
   `lng` varchar(100) DEFAULT NULL,
   `location_type` tinyint(1) DEFAULT NULL,
+  `location_detail` varchar(255) NOT NULL,
+  `image_name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_location`
 --
 
-INSERT INTO `tbl_location` (`id`, `location_name`, `lat`, `lng`, `location_type`) VALUES
-(1, 'โรงแรมมีสุข', '15.175530157957471', '103.6834716796875', 1),
-(2, 'โรงแรมอยู่สบาย', '15.090687418628141', '103.9141845703125', 1),
-(3, 'ร้านอาหารกินอิ่ม', '15.08803553604297', '103.57086181640625', 2),
-(4, 'โรงแรมสวัสดี', '14.450638918075438', '103.9581298828125', 1);
+INSERT INTO `tbl_location` (`id`, `location_name`, `lat`, `lng`, `location_type`, `location_detail`, `image_name`) VALUES
+(1, 'โรงแรมมีสุข', '15.175530157957471', '103.6834716796875', 1, '', ''),
+(2, 'โรงแรมอยู่สบาย', '15.090687418628141', '103.9141845703125', 1, '', ''),
+(3, 'ร้านอาหารกินอิ่ม', '15.08803553604297', '103.57086181640625', 2, '', ''),
+(4, 'โรงแรมสวัสดี', '14.450638918075438', '103.9581298828125', 1, '', ''),
+(6, 'โรงแรมน่าอยู่', '14.902321826141808', '104.35089111328125', 1, 'โรงแรมน่าอยู่มาก อยู่ใจกลางเมือง', '1512152372.jpg'),
+(7, 'โรงแรมอยู่ดี', '15.013769408093117', '103.02978515625', 1, 'โรงแรมอยู่ดี สงบเงียบส่วนตัวมาก', '1512153169.jpg');
 
 -- --------------------------------------------------------
 
